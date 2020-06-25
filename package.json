@@ -1,0 +1,35 @@
+{
+  "name": "@maruware/material-ui-login",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepare": "npm run clean && npm run build",
+    "postinstall": "postinstall-build dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/maruware/material-ui-login.git"
+  },
+  "keywords": [
+    "material-ui"
+  ],
+  "author": "maruware",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maruware/material-ui-login/issues"
+  },
+  "homepage": "https://github.com/maruware/material-ui-login#readme",
+  "dependencies": {
+    "postinstall-build": "^5.0.3"
+  },
+  "devDependencies": {
+    "@material-ui/core": "^4.10.2",
+    "@types/react": "^16.9.41",
+    "typescript": "^3.9.5"
+  }
+}
