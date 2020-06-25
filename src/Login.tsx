@@ -52,7 +52,7 @@ export interface LoginProps {
   submitButtonLabel?: string
   backgroundColor?: string
 
-  onSubmit: (data: AuthInfo) => Promise<any>
+  onSubmit: (data: AuthInfo) => void
 }
 
 export const Login: React.FC<LoginProps> = ({ onSubmit, usernameLabel, passwordLabel, submitButtonLabel, backgroundColor }) => {
@@ -74,19 +74,19 @@ export const Login: React.FC<LoginProps> = ({ onSubmit, usernameLabel, passwordL
     []
   )
 
-  const signIn = useCallback(
+  const handleSubmit = useCallback(
     (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault()
 
       onSubmit({username, password})
     },
-    [username, password]
+    [username, password, onSubmit]
   )
 
   return (
     <div className={classes.root}>
       <Card className={classes.card}>
-        <form onSubmit={signIn}>
+        <form onSubmit={handleSubmit}>
           <CardContent className={classes.fieldsContainer}>
             <TextField
               label={usernameLabel || 'User name'}
